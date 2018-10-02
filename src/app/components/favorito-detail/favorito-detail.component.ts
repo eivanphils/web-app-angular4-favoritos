@@ -10,7 +10,8 @@ import {Favorito} from '../../models/favorito';
   providers: [FavoritoService]
 })
 export class FavoritoDetailComponent implements OnInit {
-  public favorito: any;
+  public favorito: any = {};
+
 
   constructor(protected _favoritoService: FavoritoService,
               private _route: ActivatedRoute,

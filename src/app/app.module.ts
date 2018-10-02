@@ -13,6 +13,8 @@ import { FavoritoDetailComponent } from './components/favorito-detail/favorito-d
 import {Ng4LoadingSpinnerModule} from 'ng4-loading-spinner';
 import { FavoritoNewComponent } from './components/favorito-new/favorito-new.component';
 import {FavoritoEditComponent} from './components/favorito-edit/favorito-edit.component';
+import {JasperoConfirmationsModule} from '@jaspero/ng2-confirmations';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import {FavoritoEditComponent} from './components/favorito-edit/favorito-edit.co
     HttpModule,
     FormsModule,
     routing,
-    Ng4LoadingSpinnerModule.forRoot()
+    Ng4LoadingSpinnerModule.forRoot(),
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    JasperoConfirmationsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

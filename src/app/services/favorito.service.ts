@@ -18,20 +18,20 @@ export class FavoritoService {
     return this._http.get(this.url + 'favoritos')
       .map(res => res.json());
   }
-
   public getFavorito(id: string): Observable<Favorito> {
     return this._http.get(this.url + 'favorito/' + id)
       .map(res => res.json());
   }
-
   public saveFavorito(body): Observable<Favorito> {
     return this._http.post(this.url + 'favorito', body)
       .map(res => res.json());
   }
-
   public updateFavorito(body, id): Observable<Favorito> {
-    console.log('id in service', id)
     return this._http.put(this.url + 'favorito/' + id , body)
+      .map(res => res.json());
+  }
+  public removeFavorito(id: string): Observable<Favorito> {
+    return this._http.delete(this.url + 'favorito/' + id)
       .map(res => res.json());
   }
 

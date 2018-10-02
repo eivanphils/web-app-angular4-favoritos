@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute, Params} from '@angular/router';
 import {FavoritoService} from '../../services/favorito.service';
-import {Favorito} from '../../models/favorito';
-import {Ng4LoadingSpinnerService} from 'ng4-loading-spinner';
+import { ConfirmationService } from '@jaspero/ng2-confirmations';
+import { ResolveEmit } from '../../interface/resolve-emit';
+import { ConfirmSettings } from '../../interface/confirm-settings';
 
 @Component({
   selector: 'favoritos-list',
@@ -12,8 +12,17 @@ import {Ng4LoadingSpinnerService} from 'ng4-loading-spinner';
 })
 export class FavoritosListComponent implements OnInit {
   public favoritos: any;
+  public settings: ConfirmSettings | any = {
+    overlay: true,
+    overlayClickToClose: true,
+    showCloseButton: true,
+    confirmText: 'Si',
+    declineText: 'No',
+  };
+
   constructor(
-    protected _favoritoService: FavoritoService
+    protected _favoritoService: FavoritoService,
+    private _confirmation: ConfirmationService
   ) { }
 
   ngOnInit() {
@@ -34,5 +43,22 @@ export class FavoritosListComponent implements OnInit {
 
   removeItem(id) {
     console.log('item a eliminar', id);
+    this._confirmation.create('Example confirm button', 'Test confirmation button', this.settings)
+      .subscribe((ans: ResolveEmit) => {
+        if (ans.resolved === true) {
+          this._favoritoService.removeFavorito(id).subscribe(
+            (response) => {
+              console.log('favorito elminado', response);
+              this.getFavoritos();
+            },
+            (err) => {
+              console.log(err);
+            }
+          );
+        } else {
+          console.log('decline button clicked');
+        }
+      });
   }
+
 }

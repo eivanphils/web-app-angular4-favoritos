@@ -9,7 +9,7 @@ import {FavoritoEditComponent} from './components/favorito-edit/favorito-edit.co
 const routes: Routes = [
   {path: '', component: FavoritosListComponent},
   {path: 'favorito/:id', component: FavoritoDetailComponent},
-  {path: 'crearFavorito/', component: FavoritoNewComponent},
+  {path: 'crearFavorito', component: FavoritoNewComponent},
   {path: 'editFavorito/:id', component: FavoritoEditComponent},
   {path: '**', component: FavoritosListComponent},
 ];

@@ -11,14 +11,12 @@ import {FavoritoService} from '../../services/favorito.service';
   providers: [FavoritoService]
 })
 export class FavoritoEditComponent implements OnInit {
-  public favorito: Favorito;
+  public favorito: any = {};
   constructor(
     private _favoritoService: FavoritoService,
     private _router: Router,
     private _route: ActivatedRoute
-  ) {
-    this.favorito = new Favorito();
-  }
+  ) {  }
 
   ngOnInit() {
     this.getFavorito();
