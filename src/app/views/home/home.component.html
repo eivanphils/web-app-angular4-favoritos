@@ -1,0 +1,19 @@
+
+<div class="container">
+  <header id="header">
+    <h1 [routerLink]="['/']">{{title}}</h1>
+    <p class="inline-block">{{description}}</p>
+  </header>
+
+  <div class="row">
+    <div class="col-md-12">
+      <ng4-loading-spinner> </ng4-loading-spinner>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <footer>
+
+    Copyright
+  </footer>
+</div>

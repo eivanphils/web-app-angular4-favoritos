@@ -1,0 +1,31 @@
+<button class="btn btn-danger" [routerLink]="['/']">Volver</button>
+
+<form>
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control" name="title" #title="ngModel" required
+           [(ngModel)]="favorito.title">
+    <span *ngIf="title.touched && !title.valid">El titulo no es correcto</span>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <textarea type="text" class="form-control" #description="ngModel" placeholder="dadad" name="description"
+              required
+              [(ngModel)]="favorito.description"></textarea>
+    <span *ngIf="description.touched && !description.valid">la description no es correcto</span>
+  </div>
+  <div class="form-group">
+    <label>Url</label>
+    <input type="url" class="form-control" #url="ngModel" placeholder="http://google.com" name="url"
+           required
+           [(ngModel)]="favorito.url">
+    <span *ngIf="url.touched && !url.valid">El url no es correcto</span>
+
+  </div>
+  <div class="form-group">
+    <label>image</label>
+    <input type="file" class="form-control" placeholder="image" name="file"
+           [(ngModel)]="favorito.image">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="saveFavorito()">Guardar</button>
+</form>

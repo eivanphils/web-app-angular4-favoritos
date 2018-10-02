@@ -1,0 +1,22 @@
+<div class="btn btn-success inline-block circle" [routerLink]="['/crearFavorito']"><i class="fa fa-plus"></i></div>
+
+<h3>
+  Lista de favoritos
+</h3>
+
+<div class="row">
+  <div class="col-md-4 col-sm-6"
+       *ngFor="let favorito of favoritos">
+    <div class="card">
+      <img class="card-img-top" src="{{favorito.image}}">
+      <div class="card-body">
+        <h5 class="card-title">{{favorito.title}}</h5>
+        <p class="card-text">{{favorito.description}}</p>
+        <a href="{{favorito.link}}" class="btn success">Ir al link</a>
+        <a href="#" class="btn btn-primary" [routerLink]="['/favorito', favorito._id]">Ver</a>
+        <a href="#" class="btn btn-warning" [routerLink]="['/editFavorito', favorito._id]">Editar</a>
+        <a href="#" class="btn btn-danger" (click)="removeItem(favorito._id)">Eliminar</a>
+      </div>
+    </div>
+  </div>
+</div>
