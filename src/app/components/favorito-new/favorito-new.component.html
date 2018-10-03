@@ -23,9 +23,15 @@
 
   </div>
   <div class="form-group">
-    <label>image</label>
+    <label>Nombre del archivo</label>
+    <input type="text" class="form-control" placeholder="image" name="nombreFile"
+           required
+           [(ngModel)]="image.title">
+  </div> <div class="form-group">
+    <label>foto</label>
     <input type="file" class="form-control" placeholder="image" name="file"
-           [(ngModel)]="favorito.image">
+           required
+           [(ngModel)]="image.picture">
   </div>
   <button type="submit" class="btn btn-primary" (click)="saveFavorito()">Guardar</button>
 </form>

@@ -3,4 +3,7 @@
 </p>
 <button class="btn btn-danger" [routerLink]="['/']">Volver</button>
 
-<pre>{{favorito | json}}</pre>
+<ul *ngIf="images">
+  <li *ngFor="let image of images"><img width="10%" src="{{apiUrl + image.picture}}" alt="">
+  <div class="btn btn-danger" (click)="removeItem(image._id)">eliminar fotos</div></li>
+</ul>

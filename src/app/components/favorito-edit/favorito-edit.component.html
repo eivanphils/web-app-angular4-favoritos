@@ -22,13 +22,5 @@
     <span *ngIf="url.touched && !url.valid">El url no es correcto</span>
 
   </div>
-  <div class="form-group">
-    <label for="">imagen actual</label>
-    <img  src="{{favorito.image}}">
-  </div>
-  <div class="form-group">
-    <label>image</label>
-    <input type="file" class="form-control" placeholder="image" name="file">
-  </div>
   <button type="submit" class="btn btn-primary" (click)="saveFavorito()">Guardar</button>
 </form>

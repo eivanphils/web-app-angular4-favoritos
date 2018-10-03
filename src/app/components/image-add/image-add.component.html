@@ -1,0 +1,16 @@
+<button class="btn btn-danger" [routerLink]="['/']">Volver</button>
+<form action="">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-control" name="title" #title="ngModel" required
+           [(ngModel)]="image.title">
+    <span *ngIf="title.touched && !title.valid">El titulo no es correcto</span>
+  </div>
+  <div class="form-group">
+    <label>imagen</label>
+    <input type="file" class="form-control" name="imagen" #imagen="ngModel" required
+           [(ngModel)]="image.picture">
+    <span *ngIf="imagen.touched && !imagen.valid">La imagen no es correcto</span>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="saveImage()">Guardar</button>
+</form>

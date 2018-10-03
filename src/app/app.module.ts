@@ -15,6 +15,8 @@ import { FavoritoNewComponent } from './components/favorito-new/favorito-new.com
 import {FavoritoEditComponent} from './components/favorito-edit/favorito-edit.component';
 import {JasperoConfirmationsModule} from '@jaspero/ng2-confirmations';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { ImageAddComponent } from './components/image-add/image-add.component';
+import { ImageEditComponent } from './components/image-edit/image-edit.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-b
     HomeComponent,
     FavoritoDetailComponent,
     FavoritoNewComponent,
-    FavoritoEditComponent
+    FavoritoEditComponent,
+    ImageAddComponent,
+    ImageEditComponent
   ],
   imports: [
     BrowserModule,
